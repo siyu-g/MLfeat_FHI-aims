@@ -1,0 +1,22 @@
+xc                                 pbe
+relativistic                       zora scalar 1e-12
+occupation_type                    gaussian 0.0001
+load_balancing                     .true.
+KS_method                          scalapack_fast
+mixer                              pulay
+n_max_pulay                        5
+charge_mix_param                   0.4
+sc_accuracy_etot                   1e-6
+sc_accuracy_eev                    1e-4
+sc_accuracy_rho                    1e-6
+sc_iter_limit                      100
+prodbas_threshold                  1e-4
+basis_threshold                    1e-5
+override_illconditioning           .true.
+use_logsbt                         .true.
+spin                               none
+charge                             0
+empty_states                       6
+k_grid                             2 4 2 # This should be modified according to cell length
+many_body_dispersion_pre2019               
+
