@@ -1,0 +1,60 @@
+Build Env for Orgel Base
+
+
+Instruction from Lead:
+/home/xingyuliu/backup_arjuna/orgel-test/Hab-Reorganisation-Energy/for_collaboration/python-packages/orgel_base-v0.2/installation.txt
+
+# Create virtual env of orgel_base
+conda create -n venv_orgel_base python=3.5
+conda activate venv_orgel_base
+
+# Upgrade pip and install packages with pip
+pip install --upgrade pip
+pip install --upgrade setuptools
+pip install ipython numpy scipy scikit-learn 
+pip install ase==3.14.1
+
+# Install Openbabel and RDkit with conda-forge:
+# conda install -c conda-forge openbabel
+conda install -c conda-forge rdkit
+
+git clone https://gitlab.lrz.de/theochem/aimsutils.git
+cd aimsutils
+python setup.py install
+
+
+Trouble Shooting:
+If experience this issue: try older version  of Python, this happen to me when I was using python3.8
+
+  `numpy.distutils` is deprecated since NumPy 1.23.0, as a result
+  of the deprecation of `distutils` itself. It will be removed for
+  Python >= 3.12. For older Python versions it will remain present.
+  It is recommended to use `setuptools < 60.0` for those Python versions.
+  For more details, see:
+    https://numpy.org/devdocs/reference/distutils_status_migration.html
+
+
+  from numpy.distutils.core import setup, Extension
+Traceback (most recent call last):
+  File "setup.py", line 4, in <module>
+    from numpy.distutils.core import setup, Extension
+  File "/trace/home/siyugao/anaconda3/envs/venv_orgel_base/lib/python3.8/site-packages/numpy/distutils/core.py", line 24, in <module>
+    from numpy.distutils.command import config, config_compiler, \
+  File "/trace/home/siyugao/anaconda3/envs/venv_orgel_base/lib/python3.8/site-packages/numpy/distutils/command/config.py", line 19, in <module>
+    from numpy.distutils.mingw32ccompiler import generate_manifest
+  File "/trace/home/siyugao/anaconda3/envs/venv_orgel_base/lib/python3.8/site-packages/numpy/distutils/mingw32ccompiler.py", line 28, in <module>
+    from distutils.msvccompiler import get_build_version as get_build_msvc_version
+ModuleNotFoundError: No module named 'distutils.msvccompiler'
+
+
+Example run
+Example run on Arjuna can be found:
+
+/home/marom_group/SF/Siyu/orgel_base/orgel_base-v0.2/hab_test-ABECAL
+
+To submit the job, please make sure first install the software with the abovementioned method and build your conda environment. Or, you can use the command 
+conda activate /home/marom_group/SF/Siyu/orgel_base/venv_orgel_base_35
+To activate the environment I built.
+
+I recommend you copy the calc_habs.py and commons.py from the folder /home/marom_group/SF/Siyu/orgel_base/orgel_base-v0.2/scripts 
+and modify the path to the current FHI-aims to commons.py
