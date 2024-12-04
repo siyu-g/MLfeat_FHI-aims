@@ -15,4 +15,4 @@ basis_threshold                    1e-5
 override_illconditioning           .true.
 use_logsbt                         .true.
 charge                             0
-k_grid 				   _ _ _ # This should be determined by the cell length
+k_grid                             2 4 2 # This should be modified according to cell length
