@@ -50,7 +50,7 @@ def create_dat(data, feature_list, property, outpath):
 
 if __name__=="__main__":
     # file_name of csv file
-    file_name = "SISSO_testset_calculation_info_02202025.csv"
+    file_name = "SISSO_testset_calculation_info_03012025.csv"
     # Prepossesing the data and save it to CSV file, if already have CSV file, comment out the following line
     prep_data(file_name)
 
